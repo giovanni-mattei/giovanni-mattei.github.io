@@ -84,61 +84,56 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-    fetch('source.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to fetch projects data');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const container = document.getElementById('projects-container');
-            data.projects.forEach(project => {
-                const card = document.createElement('div');
-                card.className = 'project-card';
+            fetch('source.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch projects data');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const container = document.getElementById('projects-container');
+                    data.projects.forEach(project => {
+                        const card = document.createElement('div');
+                        card.className = 'project-card';
 
-                let actionsHTML = `
-                    <a class="btn" href="${project.github}" target="_blank">
-                        <span class="btn-icon">
-                            <i class="fab fa-github"></i>
-                        </span>
-                        GitHub
-                    </a>
-                `;
+                        // Default buttons: GitHub and Explore
+                        let actionsHTML = `
+                            <a class="btn" href="${project.github}" target="_blank">
+                                <span class="btn-icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                GitHub
+                            </a>
+                            <a class="btn" href="${project.explore_link || '#'}" target="_blank" ${!project.explore_link ? 'style="display: none;"' : ''}>
+                                <span class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </span>
+                                Explore
+                            </a>
+                        `;
 
-                if (project.explore_link) {
-                    actionsHTML += `
-                        <a class="btn" href="${project.explore_link}" target="_blank">
-                            <span class="btn-icon">
-                                <i class="fas fa-external-link-alt"></i>
-                            </span>
-                            Explore
-                        </a>
-                    `;
-                }
-
-                card.innerHTML = `
-                    <div class="project-side-bar"></div>
-                    <div class="project-content">
-                        <div class="meta">
-                            <p><strong>${project.title}</strong></p>
-                            <p class="muted">${project.description}</p>
-                            <p class="muted"><em>#${project.tags.join(' #')}</em></p>
-                        </div>
-                        <div class="actions">
-                            ${actionsHTML}
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading projects:', error);
-            document.getElementById('projects-container').innerHTML = '<p>Failed to load projects. Please try again later.</p>';
+                        card.innerHTML = `
+                            <div class="project-side-bar"></div>
+                            <div class="project-content">
+                                <div class="meta">
+                                    <p><strong>${project.title}</strong></p>
+                                    <p class="muted">${project.description}</p>
+                                    <p class="muted"><em>#${project.tags.join(' ')}</em></p>
+                                </div>
+                                <div class="actions">
+                                    ${actionsHTML}
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading projects:', error);
+                    document.getElementById('projects-container').innerHTML = '<p>Failed to load projects. Please try again later.</p>';
+                });
         });
-});
     </script>
-
 </body>
 </html>

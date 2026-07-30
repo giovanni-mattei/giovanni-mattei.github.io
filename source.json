@@ -11,7 +11,8 @@
       "title": "Trex business valuation",
       "description": "Discounted cash flow and multiples valuation of Trex Company (TREX). The valuation analysis includes a .xlsx model and .pptx summary.",
       "tags": ["Valuation", "Excel", "Powerpoint"],
-      "github": "https://github.com/giovanni-mattei"
+      "github": "https://github.com/giovanni-mattei",
+      "explore_link": "https://github.com/giovanni-mattei"
     }
   ]
 }
