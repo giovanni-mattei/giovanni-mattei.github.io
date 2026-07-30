@@ -1,0 +1,17 @@
+{
+  "projects": [
+    {
+      "title": "Automated company profile deck",
+      "description": "Python script using yfinance and Mistral to generate a bespoke company profile .pptx deck from a trading ticker.",
+      "tags": ["Python", "Automation", "Powerpoint", "AI"],
+      "github": "https://github.com/giovanni-mattei/company-profile-automation",
+      "explore_link": "https://company-profile-automation-cpwyby4qrkg7ryjfdimlba.streamlit.app/"
+    },
+    {
+      "title": "Trex business valuation",
+      "description": "Discounted cash flow and multiples valuation of Trex Company (TREX). The valuation analysis includes a .xlsx model and .pptx summary.",
+      "tags": ["Valuation", "Excel", "Powerpoint"],
+      "github": "https://github.com/giovanni-mattei"
+    }
+  ]
+}
