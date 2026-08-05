@@ -8,11 +8,11 @@
       "explore_link": "https://company-profile-automation-cpwyby4qrkg7ryjfdimlba.streamlit.app/"
     },
     {
-      "title": "Trex business valuation",
-      "description": "Discounted cash flow and multiples valuation of Trex Company (TREX). The valuation analysis includes a .xlsx model and .pptx summary.",
+      "title": "Simpson business valuation",
+      "description": "(In progress) Discounted cash flow and multiples valuation of Simpson Manufacturing (SSD). The valuation analysis includes a .xlsx model and .pptx summary.",
       "tags": ["Valuation", "Python", "Excel", "Powerpoint"],
-      "github": "https://github.com/giovanni-mattei",
-      "explore_link": "https://github.com/giovanni-mattei"
+      "github": "https://github.com/giovanni-mattei/simpson-business-valuation",
+      "explore_link": "https://github.com/giovanni-mattei/simpson-business-valuation/blob/master/spreadsheets/valuation.xlsx"
     },
     {
       "title": "Derivatives and bank profitability",
