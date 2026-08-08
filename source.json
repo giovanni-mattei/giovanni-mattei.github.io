@@ -8,18 +8,18 @@
       "explore_link": "https://company-profile-automation-cpwyby4qrkg7ryjfdimlba.streamlit.app/"
     },
     {
-      "title": "Simpson business valuation",
-      "description": "(In progress) Discounted cash flow and multiples valuation of Simpson Manufacturing (SSD). The valuation analysis includes a .xlsx model and .pptx summary.",
-      "tags": ["Valuation", "Python", "Excel", "Powerpoint"],
-      "github": "https://github.com/giovanni-mattei/simpson-business-valuation",
-      "explore_link": "https://github.com/giovanni-mattei/simpson-business-valuation/blob/master/spreadsheets/valuation.xlsx"
+      "title": "Simpson Manufacturing business valuation",
+      "description": "Discounted cash flow and comparable multiples valuation of Simpson Manufacturing (SSD). The analysis includes a Excel model and Powerpoint summary.",
+      "tags": ["Finance", "Excel", "Powerpoint"],
+      "github": "https://github.com/giovanni-mattei/simpson-manufacturing-business-valuation",
+      "explore_link": "https://raw.githubusercontent.com/giovanni-mattei/simpson-manufacturing-business-valuation/main/presentation.pdf"
     },
     {
       "title": "Derivatives and bank profitability",
       "description": "Research paper analyzing the role of derivative securities in hedging financial risks and their impact on profitability for major European banks.",
       "tags": ["Research", "Econometrics", "Derivatives"],
       "github": "https://github.com/giovanni-mattei/derivatives-and-bank-profitability",
-      "explore_link": "https://github.com/giovanni-mattei/derivatives-and-bank-profitability/blob/main/Financial%20risk%20hedging%20and%20profitability%20for%20major%20European%20banks%20-%20The%20role%20of%20derivative%20securities.pdf"
+      "explore_link": "https://raw.githubusercontent.com/giovanni-mattei/derivatives-and-bank-profitability/main/Financial%20risk%20hedging%20and%20profitability%20for%20major%20European%20banks%20-%20The%20role%20of%20derivative%20securities.pdf"
     }
   ]
 }
