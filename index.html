@@ -5,135 +5,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanni Mattei</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='white'/><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='55' font-weight='bold' font-family='ui-sans-serif,system-ui,sans-serif'>GM</text></svg>">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='white'/><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='55' font-weight='900' font-family='Geist, system-ui, sans-serif'>GM</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <header>
-        <a href="index.html">GM</a>
+        <a href="#" class="logo">Giovanni Mattei</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#intro">Summary</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="page-intro">
-            <h1>Giovanni Mattei</h1>
-            <p class="muted">
+        <section id="intro" class="intro">
+            <h2>Summary</h2>
+            <p class="bio">
                 Master's candidate in Applied Economics at Macquarie University.<br>
-                Bachelor's graduate with honours in Business Administration from Ca' Foscari University.<br>
+                Bachelor's graduate with honours in Business Administration from Ca' Foscari University.<br><br>
                 Experience in developing a business plan at BCG, performing financial analyses and valuations at Studio Epica, and leading teams in market assessment reports at JEVE.
             </p>
-            <div class="resume">
-                <a class="btn" href="Giovanni Mattei Resume.pdf" target="_blank">View resume (.pdf)</a>
-            </div>
-        </div>
+            <button class="btn btn-resume" onclick="window.open('Giovanni Mattei Resume.pdf', '_blank')">
+                View resume (.pdf)
+            </button>
+        </section>
 
-        <section class="contact">
-            <h2>Contact</h2>
-            <div class="entry">
-                <div class="logo">
-                    <i class="fas fa-envelope"></i>
+        <section id="contacts" class="contacts">
+            <h2>Contacts</h2>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div class="contact-details">
+                        <strong>Email</strong>
+                        <a href="mailto:giovannimattei@tuta.io">giovannimattei@tuta.io</a>
+                    </div>
                 </div>
-                <div class="meta">
-                    <p class="bold">Email</p>
-                    <a class="muted" href="mailto:giovannimattei@tuta.io">giovannimattei@tuta.io</a>
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <div class="contact-details">
+                        <strong>Phone</strong>
+                        <a href="tel:+61450709439">+61 0450 709 439</a>
+                    </div>
                 </div>
-            </div>
-            <div class="entry">
-                <div class="logo">
-                    <i class="fas fa-phone"></i>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <div class="contact-details">
+                        <strong>LinkedIn</strong>
+                        <a href="https://www.linkedin.com/in/matteigiovanni" target="_blank">in/matteigiovanni</a>
+                    </div>
                 </div>
-                <div class="meta">
-                    <p class="bold">Phone</p>
-                    <a class="muted" href="tel:+61450709439">+61 450709439</a>
-                </div>
-            </div>
-            <div class="entry">
-                <div class="logo">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <div class="meta">
-                    <p class="bold">LinkedIn</p>
-                    <a class="muted" href="https://www.linkedin.com/in/matteigiovanni" target="_blank">in/matteigiovanni</a>
-                </div>
-            </div>
-            <div class="entry">
-                <div class="logo">
-                    <i class="fab fa-github"></i>
-                </div>
-                <div class="meta">
-                    <p class="bold">GitHub</p>
-                    <a class="muted" href="https://github.com/giovanni-mattei" target="_blank">@giovanni-mattei</a>
+                <div class="contact-item">
+                    <i class="fab fa-github contact-icon"></i>
+                    <div class="contact-details">
+                        <strong>GitHub</strong>
+                        <a href="https://github.com/giovanni-mattei" target="_blank">@giovanni-mattei</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="projects">
             <h2>Projects</h2>
-            <div id="projects-container">
-                <!-- Projects will be dynamically inserted here -->
+            <div class="project-list" id="projects-container">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        fetch('source.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                const container = document.getElementById('projects-container');
+                                data.projects.forEach((project) => {
+                                    const card = document.createElement('div');
+                                    card.className = 'project-card';
+
+                                    const leftDiv = document.createElement('div');
+                                    leftDiv.className = 'project-card-left';
+
+                                    const rightDiv = document.createElement('div');
+                                    rightDiv.className = 'project-card-right';
+
+                                    const contentDiv = document.createElement('div');
+                                    contentDiv.className = 'project-content';
+                                    contentDiv.innerHTML = `
+                                        <p><strong>${project.title}</strong></p>
+                                        <p>${project.description}</p>
+                                        <p><em>${project.tags.join(', ')}</em></p>
+                                    `;
+
+                                    const githubButton = document.createElement('button');
+                                    githubButton.className = 'btn';
+                                    githubButton.onclick = function() { window.open(project.github, '_blank'); };
+                                    githubButton.innerHTML = '<i class="fab fa-github"></i> GitHub';
+
+                                    const exploreButton = document.createElement('button');
+                                    exploreButton.className = 'btn';
+                                    exploreButton.onclick = function() { if (project.explore_link) window.open(project.explore_link, '_blank'); };
+                                    if (!project.explore_link) exploreButton.style.display = "none";
+                                    exploreButton.innerHTML = '<i class="fas fa-external-link-alt"></i> Explore';
+
+                                    const actionsDiv = document.createElement('div');
+                                    actionsDiv.className = 'project-actions';
+                                    actionsDiv.appendChild(githubButton);
+                                    actionsDiv.appendChild(exploreButton);
+
+                                    rightDiv.appendChild(contentDiv);
+                                    rightDiv.appendChild(actionsDiv);
+
+                                    card.appendChild(leftDiv);
+                                    card.appendChild(rightDiv);
+
+                                    container.appendChild(card);
+                                });
+                            })
+                            .catch(error => {
+                                console.error('Error loading projects:', error);
+                                document.getElementById('projects-container').innerHTML = '<p>Failed to load projects. Please try again later.</p>';
+                            });
+                    });
+                </script>
             </div>
         </section>
+
     </main>
 
     <footer>
-        <p class="muted">&copy; 2026 Giovanni Mattei. All rights reserved.</p>
+        <p>&copy; 2026 Giovanni Mattei. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('source.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch projects data');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const container = document.getElementById('projects-container');
-                    data.projects.forEach(project => {
-                        const card = document.createElement('div');
-                        card.className = 'project-card';
-
-                        // Default buttons: GitHub and Explore
-                        let actionsHTML = `
-                            <a class="btn" href="${project.github}" target="_blank">
-                                <span class="btn-icon">
-                                    <i class="fab fa-github"></i>
-                                </span>
-                                GitHub
-                            </a>
-                            <a class="btn" href="${project.explore_link || '#'}" target="_blank" ${!project.explore_link ? 'style="display: none;"' : ''}>
-                                <span class="btn-icon">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </span>
-                                Explore
-                            </a>
-                        `;
-
-                        card.innerHTML = `
-                            <div class="project-side-bar"></div>
-                            <div class="project-content">
-                                <div class="meta">
-                                    <p><strong>${project.title}</strong></p>
-                                    <p class="muted">${project.description}</p>
-                                    <p class="muted"><em>${project.tags.join(', ')}</em></p>
-                                </div>
-                                <div class="actions">
-                                    ${actionsHTML}
-                                </div>
-                            </div>
-                        `;
-                        container.appendChild(card);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading projects:', error);
-                    document.getElementById('projects-container').innerHTML = '<p>Failed to load projects. Please try again later.</p>';
-                });
-        });
-    </script>
 </body>
 </html>
